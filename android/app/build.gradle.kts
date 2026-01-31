@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    compileSdk = 35
+    compileSdk = 36
 
     namespace = "com.example.weather_app_youtube"
 //    compileSdk = flutter.compileSdkVersion
@@ -28,7 +28,7 @@ android {
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         // Match the targetSdk version to the compileSdk version (required for Google Play)
-        targetSdk = 35
+        targetSdk = 36
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
