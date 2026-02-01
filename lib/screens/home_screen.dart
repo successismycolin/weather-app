@@ -92,7 +92,7 @@ class HomeScreen extends StatelessWidget {
                     ), // Image
                     const Center(
                       child: Text(
-                        '21`C',
+                        '21°C',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 55,
@@ -214,7 +214,7 @@ class HomeScreen extends StatelessWidget {
                                 ), // Text
                                 SizedBox(height: 3), // SizedBox
                                 Text(
-                                  '25`C',
+                                  '25°C',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w700,
@@ -244,7 +244,7 @@ class HomeScreen extends StatelessWidget {
                                 ), // Text
                                 SizedBox(height: 3), // SizedBox
                                 Text(
-                                  '13`C',
+                                  '13°C',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w700,
