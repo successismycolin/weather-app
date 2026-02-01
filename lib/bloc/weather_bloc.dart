@@ -29,10 +29,10 @@ class WeatherBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
 
         // When we reach here, permissions are granted and we can
         // continue accessing the position of the device.
-        Position position = await Geolocator.getCurrentPosition();
+        // Position position = await Geolocator.getCurrentPosition();
         Weather weather = await wf.currentWeatherByLocation(
-            position.latitude,
-            position.longitude,
+            event.position.latitude,
+            event.position.longitude,
         );
         emit(WeatherBlocSuccess(weather));
       } catch (e) {
