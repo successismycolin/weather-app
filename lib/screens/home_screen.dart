@@ -72,7 +72,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Johannesburg',
+                      '📍 Johannesburg',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w300,
@@ -88,7 +88,8 @@ class HomeScreen extends StatelessWidget {
                       ), // TextStyle
                     ), // Text
                     Image.asset(
-                        'assets/3.png'
+                        'assets/3.png',
+                        scale: 0.1,
                     ), // Image
                     const Center(
                       child: Text(
