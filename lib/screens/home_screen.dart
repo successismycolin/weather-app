@@ -128,7 +128,7 @@ class HomeScreen extends StatelessWidget {
                         Row(
                           children: [
                             Image.asset(
-                              'assets/1.png',
+                              'assets/17.png',
                               scale: 1.4,
                             ), // Image.asset
                             const SizedBox(width: 5), // SizedBox
@@ -158,7 +158,7 @@ class HomeScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Image.asset(
-                              'assets/1.png',
+                              'assets/18.png',
                               scale: 1.4,
                             ), // Image.asset
                             const SizedBox(width: 5), // SizedBox
@@ -198,7 +198,7 @@ class HomeScreen extends StatelessWidget {
                         Row(
                           children: [
                             Image.asset(
-                              'assets/1.png',
+                              'assets/20.png',
                               scale: 1.4,
                             ), // Image.asset
                             const SizedBox(width: 5), // SizedBox
@@ -228,7 +228,7 @@ class HomeScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Image.asset(
-                              'assets/1.png',
+                              'assets/21.png',
                               scale: 1.4,
                             ), // Image.asset
                             const SizedBox(width: 5), // SizedBox
