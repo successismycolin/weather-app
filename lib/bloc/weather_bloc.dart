@@ -10,10 +10,10 @@ import '../data/my_data.dart';
 part 'weather_bloc_event.dart';
 part 'weather_bloc_state.dart';
 
-class WeatherBlocBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
+class WeatherBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
   final String? API_KEY = dotenv.env['WEATHER_API_KEY'];
 
-  WeatherBlocBloc() : super(WeatherBlocInitial()) {
+  WeatherBloc() : super(WeatherBlocInitial()) {
     on<FetchWeather>((event, emit) async {
       // TODO: implement event handler
       emit(WeatherBlocLoading());
