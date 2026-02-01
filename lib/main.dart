@@ -16,10 +16,24 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BlocProvider<WeatherBloc>(
-        create: (context) => WeatherBloc()..add(FetchWeather()),
-        child: HomeScreen(),
+      home: FutureBuilder(
+        future: _determinePosition(),
+        builder: (context, snap) {
+          if (snap.hasData) {
+            return BlocProvider<WeatherBloc>(
+              create: (context) => WeatherBloc()..add(FetchWeather()),
+              child: HomeScreen(),
+            );
+          } else {
+            return const Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
+          }
+        }
       ),
     ); // MaterialApp
   }
 }
+

@@ -5,5 +5,7 @@ sealed class WeatherBlocEvent extends Equatable {
 }
 
 class FetchWeather extends WeatherBlocEvent {
-
+  @override
+  // TODO: implement props
+  List<Object?> get props => throw UnimplementedError();
 }
