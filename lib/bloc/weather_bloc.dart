@@ -8,12 +8,18 @@ part 'weather_bloc_state.dart';
 
 class WeatherBlocBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
   WeatherBlocBloc() : super(WeatherBlocInitial()) {
-    on<FetchWeather>((event, emit) {
+    on<FetchWeather>((event, emit) async {
       // TODO: implement event handler
+      emit(WeatherBlocLoading());
       try {
-
+        WeatherFactory wf = WeatherFactory("API_KEY", language: Language.ENGLISH)
+        Weather weather = await wf.currentWeatherByLocation(
+            latitude,
+            longitude,
+        );
+        emit(WeatherBlocFailure());
       } catch (e) {
-
+        emit(WeatherBlocFailure());
       }
     });
   }

@@ -11,6 +11,7 @@ final class WeatherBlocInitial extends WeatherBlocState {}
 
 final class WeatherBlocLoading extends WeatherBlocState {}
 final class WeatherBlocFailure extends WeatherBlocState {}
+// Will be fed to the HomeScreen
 final class WeatherBlocSuccess extends WeatherBlocState {
   final Weather weather;
 
