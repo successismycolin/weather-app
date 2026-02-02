@@ -18,6 +18,8 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: FutureBuilder(
+        // Getting position before accessing our bloc
+        // _determinePosition() comes from geolocator package
         future: _determinePosition(),
         builder: (context, snap) {
           if (snap.hasData) {
