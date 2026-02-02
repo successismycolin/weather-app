@@ -6,8 +6,64 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import '../bloc/weather_bloc.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  Widget getWeatherIcon(int code) {
+    switch (code) {
+      case >= 200 && < 300 :
+        return Image.asset(
+          // Thunderstorm
+          'assets/6.png',
+          scale: 0.1,
+        );
+      case >= 300 && < 400 :
+        return Image.asset(
+          // Light Rain
+          'assets/11.png',
+          scale: 0.1,
+        );
+      case >= 500 && < 600 :
+        return Image.asset(
+          // Rain
+          'assets/10.png',
+          scale: 0.1,
+        );
+      case >= 600 && < 700 :
+        return Image.asset(
+          // Snow
+          'assets/2.png',
+          scale: 1,
+        );
+      case >= 700 && < 800 :
+        return Image.asset(
+          // Mist
+          'assets/13.png',
+          scale: 0.1,
+        );
+      case == 800 :
+        return Image.asset(
+          // Sunny
+          'assets/16.png',
+          scale: 0.1,
+        );
+      case >= 800 && <= 804 :
+        return Image.asset(
+          // Sunny Cloudy
+          'assets/3.png',
+        );
+      default:
+        return Image.asset(
+            'assets/3.png'
+        );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -93,10 +149,7 @@ class HomeScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ), // TextStyle
                           ), // Text
-                          Image.asset(
-                              'assets/3.png',
-                              scale: 0.1,
-                          ), // Image
+                          getWeatherIcon(state.weather.weatherConditionCode!),
                           Center(
                             child: Text(
                               '${state.weather.temperature!.celsius!.round()}°C',
