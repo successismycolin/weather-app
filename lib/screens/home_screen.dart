@@ -149,6 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontWeight: FontWeight.bold,
                             ), // TextStyle
                           ), // Text
+                          // Weather Condition Icon
                           getWeatherIcon(state.weather.weatherConditionCode!),
                           Center(
                             child: Text(
@@ -162,8 +163,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           ), // Center
                           Center(
                             child: Text(
-                              // Weather Condition
-                              state.weather.weatherDescription!.toUpperCase(),
+                              // Weather Condition Description
+                              state.weather.weatherMain!.toUpperCase(),
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 25,
