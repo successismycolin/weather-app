@@ -63,12 +63,305 @@ class _HomeScreenState extends State<HomeScreen> {
             'assets/3.png'
         );
     }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   // TODO: implement build
+  //   throw UnimplementedError();
+  // }
+  //
+
+
+    // List<Color> getNightBackgroundColors(TimeOfDay sunsetTime) {
+    //   TimeOfDay now = TimeOfDay.now();
+    //   Color primary = Colors.blue;
+    //   Color secondary = Colors.black87;
+    //   if (now.isAfter(sunsetTime)) {
+    //     return [primary, secondary];
+    //   }
+    // }
   }
 
   @override
   Widget build(BuildContext context) {
+    // return BlocBuilder<WeatherBloc, WeatherBlocState>(
+    //   builder: (context, state) {
+    //     if (state is WeatherBlocSuccess) {
+    //       return Scaffold(
+    //         backgroundColor: Colors.black,
+    //         extendBodyBehindAppBar: true,
+    //         appBar: AppBar(
+    //           backgroundColor: Colors.transparent,
+    //           elevation: 0,
+    //           systemOverlayStyle: SystemUiOverlayStyle(
+    //             statusBarBrightness: Brightness.dark
+    //           ), // SystemUiOverlayStyle
+    //         ), // AppBar
+    //
+    //         body: Padding(
+      //         // from Left Top Right Bottom
+      //         // kToolbarHeight is a constant provided by Flutter
+      //         padding: const EdgeInsets.fromLTRB(40, 1.2 * kToolbarHeight, 40, 20),
+      //         child: SizedBox(
+//                 // body will be the entire height of the screen
+//                 height: MediaQuery.of(context).size.height,
+//                 child: Stack(
+//                   children: [
+//                     Align(
+//                       alignment: AlignmentDirectional(3, -0.3),
+//                       child: Container(
+//                         height: 300,
+//                         width: 300,
+//                         decoration: BoxDecoration(
+//                           shape: BoxShape.circle,
+//                           color: Colors.deepPurple,
+//                         ), // BoxDecoration
+//                       ), // Container
+//                     ), // Align
+//                     Align( // Align
+//                       alignment: const AlignmentDirectional(-3, -0.3),
+//                       child: Container(
+//                           height: 300,
+//                           width: 300,
+//                           decoration: const BoxDecoration(
+//                             shape: BoxShape.circle,
+//                             color: Colors.deepPurple,
+//                           ) // BoxDecoration
+//                       ), // Container
+//                     ), // Align
+//                     Align(
+//                       alignment: const AlignmentDirectional(0, -1.2),
+//                       child: Container(
+//                         height: 300,
+//                         width: 600,
+//                         decoration: const BoxDecoration(
+//                           color: Colors.orange,
+//                         ), // BoxDecoration
+//                       ), // Container
+//                     ), // Align
+//                     BackdropFilter(
+//                       filter: ImageFilter.blur(sigmaX: 100.0, sigmaY: 100.0), // ImageFilter.blur
+//                       child: Container(
+//                         decoration: BoxDecoration(color: Colors.transparent), // BoxDecoration
+//                       ), // Container
+//                     ), // BackdropFilter
+//                     SizedBox(
+//                       width: MediaQuery.of(context).size.width,
+//                       height: MediaQuery.of(context).size.height,
+//                       child: Column(
+//                         crossAxisAlignment: CrossAxisAlignment.start,
+//                         children: [
+//                           Text(
+//                             '📍 ${state.weather.areaName}',
+//                             style: TextStyle(
+//                               color: Colors.white,
+//                               fontWeight: FontWeight.w300,
+//                             ), // TextStyle
+//                           ), // Text
+//                           const SizedBox(height: 8), // SizedBox
+//                           Text(
+//                             'Good Morning',
+//                             style: TextStyle(
+//                               color: Colors.white,
+//                               fontSize: 25,
+//                               fontWeight: FontWeight.bold,
+//                             ), // TextStyle
+//                           ), // Text
+//                           // Weather Condition Icon
+//                           getWeatherIcon(state.weather.weatherConditionCode!),
+//                           Center(
+//                             child: Text(
+//                               '${state.weather.temperature!.celsius!.round()}°C',
+//                               style: const TextStyle(
+//                                 color: Colors.white,
+//                                 fontSize: 55,
+//                                 fontWeight: FontWeight.w400,
+//                               ), // TextStyle
+//                             ), // Text
+//                           ), // Center
+//                           Center(
+//                             child: Text(
+//                               // Weather Condition Description
+//                               state.weather.weatherMain!.toUpperCase(),
+//                               style: TextStyle(
+//                                 color: Colors.white,
+//                                 fontSize: 25,
+//                                 fontWeight: FontWeight.w500,
+//                               ), // TextStyle
+//                             ), // Text
+//                           ), // Center
+//                           const SizedBox(height: 5), // SizedBox
+//                           Center(
+//                             child: Text(
+//                               // Day, Date and Time
+//                               DateFormat('EEEE dd ·').add_jm().format(state.weather.date!),
+//                               // 'Friday 16 - 09:41AM',
+//                               style: TextStyle(
+//                                 color: Colors.white,
+//                                 fontSize: 16,
+//                                 fontWeight: FontWeight.w300,
+//                               ), // TextStyle
+//                             ), // Text
+//                           ), // Center
+//                           const SizedBox(height: 30), // SizedBox
+//                           Row(
+//                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                             children: [
+//                               Row(
+//                                 children: [
+//                                   Image.asset(
+//                                     'assets/17.png',
+//                                     scale: 1.4,
+//                                   ), // Image.asset
+//                                   const SizedBox(width: 5), // SizedBox
+//                                   Column(
+//                                     crossAxisAlignment: CrossAxisAlignment.start,
+//                                     children: [
+//                                       Text(
+//                                         'Sunrise',
+//                                         style: TextStyle(
+//                                           color: Colors.white,
+//                                           fontWeight: FontWeight.w300,
+//                                         ), // TextStyle
+//                                       ), // Text
+//                                       SizedBox(height: 3), // SizedBox
+//                                       Text(
+//                                         // Sunrise Time
+//                                         DateFormat().add_jm().format(state.weather.sunrise!),
+//                                         style: const TextStyle(
+//                                           color: Colors.white,
+//                                           fontWeight: FontWeight.w700,
+//                                         ), // TextStyle
+//                                       ), // Text
+//                                     ],
+//                                   ), // Column
+//                                 ],
+//                               ), // Row
+//                               Row(
+//                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                                 children: [
+//                                   Image.asset(
+//                                     'assets/18.png',
+//                                     scale: 1.4,
+//                                   ), // Image.asset
+//                                   const SizedBox(width: 5), // SizedBox
+//                                   Column(
+//                                     crossAxisAlignment: CrossAxisAlignment.start,
+//                                     children: [
+//                                       Text(
+//                                         'Sunset',
+//                                         style: TextStyle(
+//                                           color: Colors.white,
+//                                           fontWeight: FontWeight.w300,
+//                                         ), // TextStyle
+//                                       ), // Text
+//                                       SizedBox(height: 3), // SizedBox
+//                                       Text(
+//                                         // Sunset Time
+//                                         DateFormat().add_jm().format(state.weather.sunset!),
+//                                         style: TextStyle(
+//                                           color: Colors.white,
+//                                           fontWeight: FontWeight.w700,
+//                                         ), // TextStyle
+//                                       ), // Text
+//                                     ],
+//                                   ), // Column
+//                                 ],
+//                               ), // Row
+//                             ],
+//                           ), // Row
+//                           const Padding(
+//                             padding:  EdgeInsets.symmetric(vertical: 5.0),
+//                             child: Divider(
+//                               color: Colors.grey,
+//                             ), // Divider
+//                           ), // Padding
+//                           Row(
+//                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                             children: [
+//                               Row(
+//                                 children: [
+//                                   Image.asset(
+//                                     'assets/20.png',
+//                                     scale: 1.4,
+//                                   ), // Image.asset
+//                                   const SizedBox(width: 5), // SizedBox
+//                                   Column(
+//                                     crossAxisAlignment: CrossAxisAlignment.start,
+//                                     children: [
+//                                       Text(
+//                                         'Max Temp',
+//                                         style: TextStyle(
+//                                           color: Colors.white,
+//                                           fontWeight: FontWeight.w300,
+//                                         ), // TextStyle
+//                                       ), // Text
+//                                       SizedBox(height: 3), // SizedBox
+//                                       Text(
+//                                         // Maximum Temp
+//                                         '${state.weather.tempMax!.celsius!.round()}°C',
+//                                         style: TextStyle(
+//                                           color: Colors.white,
+//                                           fontWeight: FontWeight.w700,
+//                                         ), // TextStyle
+//                                       ), // Text
+//                                     ],
+//                                   ), // Column
+//                                 ],
+//                               ), // Row
+//                               Row(
+//                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                                 children: [
+//                                   Image.asset(
+//                                     'assets/21.png',
+//                                     scale: 1.4,
+//                                   ), // Image.asset
+//                                   const SizedBox(width: 5), // SizedBox
+//                                   Column(
+//                                     crossAxisAlignment: CrossAxisAlignment.start,
+//                                     children: [
+//                                       Text(
+//                                         'Min Temp',
+//                                         style: TextStyle(
+//                                           color: Colors.white,
+//                                           fontWeight: FontWeight.w300,
+//                                         ), // TextStyle
+//                                       ), // Text
+//                                       const SizedBox(height: 3), // SizedBox
+//                                       Text(
+//                                         // Minimum Temperature
+//                                         '${state.weather.tempMin!.celsius!.round()}°C',
+//                                         style: const TextStyle(
+//                                           color: Colors.white,
+//                                           fontWeight: FontWeight.w700,
+//                                         ), // TextStyle
+//                                       ), // Text
+//                                     ],
+//                                   ), // Column
+//                                 ],
+//                               ), // Row
+//                             ],
+//                           ), // Row
+//                         ],
+//                       ), // Column
+//                     ), // SizedBox
+//                   ],
+//                 ), // Stack
+//               );
+      //
+      //
+      //             } else {
+      //               return Container();
+      //             }
+      //           },
+      //         ), // SizedBox
+      //       ),
+    //       ); // Scaffold
+    //     }
+    //   }
+    // );
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.transparent,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -80,252 +373,268 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Padding(
         // from Left Top Right Bottom
         // kToolbarHeight is a constant provided by Flutter
-        padding: const EdgeInsets.fromLTRB(40, 1.2 * kToolbarHeight, 40, 20),
+        // padding: const EdgeInsets.fromLTRB(40, 1.2 * kToolbarHeight, 40, 20),
+        padding: EdgeInsets.all(0.0),
         child: BlocBuilder<WeatherBloc, WeatherBlocState>(
           builder: (context, state) {
             if (state is WeatherBlocSuccess) {
+              List<Color> colors = getBackgroundColors(state.weather.sunrise!, state.weather.sunset!);
               return SizedBox(
                 // body will be the entire height of the screen
                 height: MediaQuery.of(context).size.height,
                 child: Stack(
                   children: [
-                    Align(
-                      alignment: AlignmentDirectional(3, -0.3),
-                      child: Container(
-                        height: 300,
-                        width: 300,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.deepPurple,
-                        ), // BoxDecoration
-                      ), // Container
-                    ), // Align
-                    Align( // Align
-                      alignment: const AlignmentDirectional(-3, -0.3),
-                      child: Container(
-                          height: 300,
-                          width: 300,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.deepPurple,
-                          ) // BoxDecoration
-                      ), // Container
-                    ), // Align
-                    Align(
-                      alignment: const AlignmentDirectional(0, -1.2),
-                      child: Container(
-                        height: 300,
-                        width: 600,
-                        decoration: const BoxDecoration(
-                          color: Colors.orange,
-                        ), // BoxDecoration
-                      ), // Container
-                    ), // Align
+                    // Align(
+                    //   alignment: AlignmentDirectional(3, -0.3),
+                    //   child: Container(
+                    //     height: MediaQuery.of(context).size.height,
+                    //     width: MediaQuery.of(context).size.width,
+                    //     decoration: BoxDecoration(
+                    //       shape: BoxShape.circle,
+                    //       color: colors[1],
+                    //     ), // BoxDecoration
+                    //   ), // Container
+                    // ), // Align
+                    // Align( // Align
+                    //   alignment: const AlignmentDirectional(-3, -0.3),
+                    //   child: Container(
+                    //       height: 300,
+                    //       width: 300,
+                    //       decoration: BoxDecoration(
+                    //         shape: BoxShape.circle,
+                    //         color: colors[0],
+                    //       ) // BoxDecoration
+                    //   ), // Container
+                    // ),
+                    // // Align
+                    // Align(
+                    //   alignment: const AlignmentDirectional(0, -1.2),
+                    //   child: Container(
+                    //     height: 300,
+                    //     width: 600,
+                    //     decoration: BoxDecoration(
+                    //       color: colors[0],
+                    //     ), // BoxDecoration
+                    //   ), // Container
+                    // ), // Align
+                    Container(
+                      height: MediaQuery.of(context).size.height,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [colors[0], colors[1]])
+                      ),
+                    ),
                     BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 100.0, sigmaY: 100.0), // ImageFilter.blur
                       child: Container(
                         decoration: BoxDecoration(color: Colors.transparent), // BoxDecoration
                       ), // Container
                     ), // BackdropFilter
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '📍 ${state.weather.areaName}',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w300,
-                            ), // TextStyle
-                          ), // Text
-                          const SizedBox(height: 8), // SizedBox
-                          Text(
-                            'Good Morning',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                            ), // TextStyle
-                          ), // Text
-                          // Weather Condition Icon
-                          getWeatherIcon(state.weather.weatherConditionCode!),
-                          Center(
-                            child: Text(
-                              '${state.weather.temperature!.celsius!.round()}°C',
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 55,
-                                fontWeight: FontWeight.w400,
-                              ), // TextStyle
-                            ), // Text
-                          ), // Center
-                          Center(
-                            child: Text(
-                              // Weather Condition Description
-                              state.weather.weatherMain!.toUpperCase(),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(30, kToolbarHeight, 40, 20),
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '📍 ${state.weather.areaName}',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
-                              ), // TextStyle
-                            ), // Text
-                          ), // Center
-                          const SizedBox(height: 5), // SizedBox
-                          Center(
-                            child: Text(
-                              // Day, Date and Time
-                              DateFormat('EEEE dd ·').add_jm().format(state.weather.date!),
-                              // 'Friday 16 - 09:41AM',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
                                 fontWeight: FontWeight.w300,
                               ), // TextStyle
                             ), // Text
-                          ), // Center
-                          const SizedBox(height: 30), // SizedBox
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    'assets/17.png',
-                                    scale: 1.4,
-                                  ), // Image.asset
-                                  const SizedBox(width: 5), // SizedBox
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Sunrise',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w300,
-                                        ), // TextStyle
-                                      ), // Text
-                                      SizedBox(height: 3), // SizedBox
-                                      Text(
-                                        // Sunrise Time
-                                        DateFormat().add_jm().format(state.weather.sunrise!),
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w700,
-                                        ), // TextStyle
-                                      ), // Text
-                                    ],
-                                  ), // Column
-                                ],
-                              ), // Row
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Image.asset(
-                                    'assets/18.png',
-                                    scale: 1.4,
-                                  ), // Image.asset
-                                  const SizedBox(width: 5), // SizedBox
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Sunset',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w300,
-                                        ), // TextStyle
-                                      ), // Text
-                                      SizedBox(height: 3), // SizedBox
-                                      Text(
-                                        // Sunset Time
-                                        DateFormat().add_jm().format(state.weather.sunset!),
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w700,
-                                        ), // TextStyle
-                                      ), // Text
-                                    ],
-                                  ), // Column
-                                ],
-                              ), // Row
-                            ],
-                          ), // Row
-                          const Padding(
-                            padding:  EdgeInsets.symmetric(vertical: 5.0),
-                            child: Divider(
-                              color: Colors.grey,
-                            ), // Divider
-                          ), // Padding
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    'assets/20.png',
-                                    scale: 1.4,
-                                  ), // Image.asset
-                                  const SizedBox(width: 5), // SizedBox
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Max Temp',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w300,
-                                        ), // TextStyle
-                                      ), // Text
-                                      SizedBox(height: 3), // SizedBox
-                                      Text(
-                                        // Maximum Temp
-                                        '${state.weather.tempMax!.celsius!.round()}°C',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w700,
-                                        ), // TextStyle
-                                      ), // Text
-                                    ],
-                                  ), // Column
-                                ],
-                              ), // Row
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Image.asset(
-                                    'assets/21.png',
-                                    scale: 1.4,
-                                  ), // Image.asset
-                                  const SizedBox(width: 5), // SizedBox
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Min Temp',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w300,
-                                        ), // TextStyle
-                                      ), // Text
-                                      const SizedBox(height: 3), // SizedBox
-                                      Text(
-                                        // Minimum Temperature
-                                        '${state.weather.tempMin!.celsius!.round()}°C',
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w700,
-                                        ), // TextStyle
-                                      ), // Text
-                                    ],
-                                  ), // Column
-                                ],
-                              ), // Row
-                            ],
-                          ), // Row
-                        ],
-                      ), // Column
+                            const SizedBox(height: 8), // SizedBox
+                            Text(
+                              'Good Morning',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ), // TextStyle
+                            ), // Text
+                            // Weather Condition Icon
+                            getWeatherIcon(state.weather.weatherConditionCode!),
+                            Center(
+                              child: Text(
+                                '${state.weather.temperature!.celsius!.round()}°C',
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 55,
+                                  fontWeight: FontWeight.w400,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                            Center(
+                              child: Text(
+                                // Weather Condition Description
+                                state.weather.weatherMain!.toUpperCase(),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w500,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                            const SizedBox(height: 5), // SizedBox
+                            Center(
+                              child: Text(
+                                // Day, Date and Time
+                                DateFormat('EEEE dd ·').add_jm().format(state.weather.date!),
+                                // 'Friday 16 - 09:41AM',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w300,
+                                ), // TextStyle
+                              ), // Text
+                            ), // Center
+                            const SizedBox(height: 30), // SizedBox
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/17.png',
+                                      scale: 1.4,
+                                    ), // Image.asset
+                                    const SizedBox(width: 5), // SizedBox
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Sunrise',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w300,
+                                          ), // TextStyle
+                                        ), // Text
+                                        SizedBox(height: 3), // SizedBox
+                                        Text(
+                                          // Sunrise Time
+                                          DateFormat().add_jm().format(state.weather.sunrise!),
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w700,
+                                          ), // TextStyle
+                                        ), // Text
+                                      ],
+                                    ), // Column
+                                  ],
+                                ), // Row
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Image.asset(
+                                      'assets/18.png',
+                                      scale: 1.4,
+                                    ), // Image.asset
+                                    const SizedBox(width: 5), // SizedBox
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Sunset',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w300,
+                                          ), // TextStyle
+                                        ), // Text
+                                        SizedBox(height: 3), // SizedBox
+                                        Text(
+                                          // Sunset Time
+                                          DateFormat().add_jm().format(state.weather.sunset!),
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w700,
+                                          ), // TextStyle
+                                        ), // Text
+                                      ],
+                                    ), // Column
+                                  ],
+                                ), // Row
+                              ],
+                            ), // Row
+                            const Padding(
+                              padding:  EdgeInsets.symmetric(vertical: 5.0),
+                              child: Divider(
+                                color: Colors.grey,
+                              ), // Divider
+                            ), // Padding
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/20.png',
+                                      scale: 1.4,
+                                    ), // Image.asset
+                                    const SizedBox(width: 5), // SizedBox
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Max Temp',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w300,
+                                          ), // TextStyle
+                                        ), // Text
+                                        SizedBox(height: 3), // SizedBox
+                                        Text(
+                                          // Maximum Temp
+                                          '${state.weather.tempMax!.celsius!.round()}°C',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w700,
+                                          ), // TextStyle
+                                        ), // Text
+                                      ],
+                                    ), // Column
+                                  ],
+                                ), // Row
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Image.asset(
+                                      'assets/21.png',
+                                      scale: 1.4,
+                                    ), // Image.asset
+                                    const SizedBox(width: 5), // SizedBox
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Min Temp',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w300,
+                                          ), // TextStyle
+                                        ), // Text
+                                        const SizedBox(height: 3), // SizedBox
+                                        Text(
+                                          // Minimum Temperature
+                                          '${state.weather.tempMin!.celsius!.round()}°C',
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w700,
+                                          ), // TextStyle
+                                        ), // Text
+                                      ],
+                                    ), // Column
+                                  ],
+                                ), // Row
+                              ],
+                            ), // Row
+                          ],
+                        ), // Column
+                      ),
                     ), // SizedBox
                   ],
                 ), // Stack
@@ -338,4 +647,32 @@ class _HomeScreenState extends State<HomeScreen> {
       ), // Padding
     ); // Scaffold
   }
+}
+
+// List<Color> getBackgroundColors(DateTime sunriseTime, DateTime sunsetTime) {
+//   Color? primary;
+//   Color? secondary;
+//
+//   DateTime now = DateTime.now();
+//
+//   if (now.isAfter(sunriseTime)) {
+//     primary = Colors.blue;
+//     secondary = Colors.orange;
+//   } else if (now.isAfter(sunsetTime)) {
+//     primary = Colors.blue;
+//     secondary = Colors.black;
+//   }
+//   return [?primary, ?secondary];
+// }
+
+List<Color> getBackgroundColors(DateTime sunriseTime, DateTime sunsetTime) {
+  final now = DateTime.now();
+
+  // Night if after sunset or before sunrise
+  if (now.isAfter(sunsetTime) || now.isBefore(sunriseTime)) {
+    return [Color.fromRGBO(0, 91, 197, 1), Color.fromRGBO(53, 22, 99, 1)]; // night colors
+  }
+
+  // Daytime
+  return [Color.fromRGBO(68, 149, 209, 1), Color.fromRGBO(149, 134, 82, 1)]; // day colors
 }
